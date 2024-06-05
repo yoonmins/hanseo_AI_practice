@@ -3,13 +3,13 @@ class Person:
         self.first_name = firtst_name
         self.last_name = last_name
         self._age = age
-
-    def get_age(self):
+    
+    @property
+    def age(self):
         return self._age
     
-    def set_age(self,age):
+    @age.setter
+    def age(self,age):
         if age<0:
-                raise ValueError("Inalid age")
+                raise ValueError("Invalid age")
         self._age =age
-    
-    age = property(get_age, set_age)
